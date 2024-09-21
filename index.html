@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WDD 131 - Dynamic Web Fundamentals - Ezequiel Espada</title>
+        <link rel="stylesheet" href="/styles/base.css">
+        <meta name="description" content="WDD 131 - Dynamic Web Fundamentals by Ezequiel H. Espada.">
+        <meta name="author" content="Ezequiel H. Espada">
+        <script src="/scripts/getdates.js" defer></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    </head>
+    
 <body>
-    <h1>Hola Mundo!</h1>
+    <header>
+        <h1>WDD 131 - Dynamic Web Fundamentals - Ezequiel Espada</h1>
+        <nav>
+            <ul class="navigation wrap">
+                <li><a href="https://www.linkedin.com/in/ezequiel-h-espada/">LinkedIn</a></li>
+                <li><a href="https://byui.instructure.com/">I-Learn</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Scripture</a></li>
+                <li><a href="#contact">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="content">
+                <img src="/images/me.jpg" alt="Personal photo Ezequiel Espada">
+                <p>My name is Ezequiel Horacio Espada, and I am a software developer based in Buenos Aires, Argentina. I study software development at BYU and currently work as a Team Leader for the LATAM group at GMS. My role involves collaborating with various clients to design and implement effective software solutions that streamline their operations and meet their personnel needs.</p>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2>Solutions for Your Business</h2>
+            <div class="content">
+                <p>As a software developer, I specialize in creating dynamic web content using JavaScript and modern web frameworks. My focus is on developing tailored solutions that enhance operational efficiency for businesses.</p>
+                <img src="/images/solutions.jpeg" alt="Developing solutions for your business">
+            </div>
+        </section>
+    </main>    
+
+    <aside>
+        <p>Skills</p>
+        <ul>
+            <li><a href="https://www.javascript.com/" target="_blank">JavaScript</a></li>
+            <li><a href="https://reactjs.org/" target="_blank">React</a></li>
+            <li><a href="https://vuejs.org/" target="_blank">Vue.js</a></li>
+            <li><a href="https://nodejs.org/" target="_blank">Node.js</a></li>
+            <li><a href="https://www.python.org/" target="_blank">Python</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> - Ezequiel H. Espada - Argentina</p>
+        <p id="lastModified"></p>
+    </footer>
+
 </body>
 </html>
