@@ -1,0 +1,171 @@
+:root {
+    --color1: black; /* dark gray */
+    --color2: #006465; /* dark teal */
+    --color3: #0f928c; /* teal */
+    --color4: #00c9d2; /* light teal */
+    --color5: white;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: Roboto, sans-serif;
+}
+
+/*********************** Header ***********************/
+
+header {
+    display: flex;
+    justify-content: space-between; /* Alinea h1 a la izquierda y nav a la derecha */
+    align-items: center; /* Centra verticalmente ambos elementos */
+    padding: 0.5rem; /* Añade un poco de espacio alrededor */
+    background-color: var(--color2); /* Color de fondo del header */
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--color5);
+    margin: 0;
+}
+
+/**************** Nav Bar - Mobile View ***************/
+
+#menu {
+	display: block;
+	font-size: 2rem;
+	font-weight:700;
+	text-decoration: none;
+	padding: .5rem .75rem;
+	background-color: var(--color2);
+	color: var(--color5);
+    cursor: pointer;
+}
+
+#menu:hover {
+    color: var(--color1); /* Cambia el color del texto cuando se hace hover */
+    background-color: var(--color5); /* Cambia el color de fondo cuando se hace hover */
+    transition: background-color 0.5s, color 0.5s; /* Agrega una transición suave */
+}
+
+#menu::before {
+	content: "≡";
+}
+
+nav {
+	display: flex;           /* Activa flexbox */
+	justify-content: flex-end; /* Mueve el botón hamburguesa a la derecha */
+	align-items: center;     /* Centra verticalmente el contenido */
+	background-color: var(--color2);
+	padding: 0.5rem;         /* Añade algo de padding para el espacio */
+}
+
+.navigation {
+	list-style: none;
+	margin: 0;
+    padding: 0;
+    width: 100%;
+	max-width: 760px;
+}
+
+.navigation li {
+	display: none;
+}
+
+.navigation a {
+	display: block;
+	padding: 0.75rem;
+	text-align: center;
+	text-decoration: none;
+	color: var(--color5);
+	font-weight: 700;
+	transition: 0.5s;
+	font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+
+.navigation a:hover, .navigation a:active {
+	color: var(--color1);
+	background-color: var(--color5);
+}
+
+.show li {
+	display:block;
+}
+
+#menu.show::before {
+	content: "X";
+}
+
+/* Contenedor principal del contenido */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--color2);
+    margin: 0;
+}
+
+/* Estilo para el título */
+.playfair-display-album-title {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 2rem;
+}
+
+/* Estilo general para la galería */
+.container {
+    display: grid;
+    gap: 1rem;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px var(--color1);
+}
+
+figcaption {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: var(--color2)
+}
+
+/* Para pantallas pequeñas (móvil): 1 imagen por fila */
+@media only screen and (max-width: 599px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 columna para móvil */
+    }
+}
+
+/**************** Footer ***************/
+
+footer {
+    background-color: var(--color2);
+    color: var(--color5);
+    padding: 1rem;
+    text-align: center;
+    border-top: 2px solid var(--color3);
+    box-shadow: 0 -2px 5px var(--color1);
+}
+
+/* Media query para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: row; /* Mantiene el h1 y el menú en la misma línea */
+    }
+
+    nav {
+        width: 100%;
+    }
+}

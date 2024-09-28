@@ -66,17 +66,17 @@ aside {
 }
 
 aside a {
-    color: var(--color1); /* Color del texto del enlace */
-    text-decoration: none; /* Sin subrayado */
-    padding: 0.5rem 0; /* Espaciado alrededor del enlace */
-    display: block; /* Aumentar el área clickeable */
+    color: var(--color1); 
+    text-decoration: none;
+    padding: 0.5rem 0; 
+    display: block;
 }
 
 aside a:hover {
-    font-weight: 700; /* Negrita en hover */
-    text-decoration: underline; /* Subrayar en hover */
-    text-decoration-color: white; /* Color del subrayado */
-    color: var(--color4); /* Cambia el color al hacer hover */
+    font-weight: 700; 
+    text-decoration: underline; 
+    text-decoration-color: white; 
+    color: var(--color4);
 }
 
 footer {
