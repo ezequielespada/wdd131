@@ -44,7 +44,12 @@
         </section>
 
         <section class="weather">
-            <h2>Weather ⛅</h2>
+            <h2>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="icons/weather-icon.svg">
+                    <img src="" alt="Weather icon" onerror="this.outerHTML = '⛅';" loading="lazy">
+            </picture> Weather
+            </h2>
             <ul>
                 <li>Temperature: 30°C</li>
                 <li>Conditions: Sunny</li>
