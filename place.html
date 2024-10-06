@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals by Ezequiel H. Espada.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"> <title>WDD 131 - Dynamic Web Fundamentals - Ezequiel Espada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="author" content="Ezequiel H. Espada">
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Egipto</h1>
+    </header>
+
+    <div class="image">
+        <picture>
+            <source media="(min-width: 800px)" srcset="images/large-image.webp">
+            <source media="(min-width: 400px)" srcset="images/medium-image.webp">
+            <img src="images/small-egypt-image.webp" alt="Image of Egypt">
+        </picture>
+    </div>
+
+    <section class="data">
+        <h2>Data</h2>
+        <ul>
+            <li>Area: 1,001,450 km²</li>
+            <li>Population: 104,124,440</li>
+            <li>Capital: Cairo</li>
+            <li>Languages: Arabic</li>
+            <li>Currency: Egyptian Pound (EGP)</li>
+            <li>Time Zone: UTC+2</li>
+            <li>Dialing Code: +20</li>
+            <li>Internet Domain: .eg</li>
+        </ul>
+    </section>
+    
+    <section class="weather">
+        <h2>Weather ⛅</h2>
+        <ul>
+            <li>Temperature: 30°C</li>
+            <li>Conditions: Sunny</li>
+            <li>Wind: 10 km/h</li>
+            <li>Wind Chill: <span id="wind-chill"></span></li>
+        </ul>
+    </section>
+    
+
+    <footer>
+        <p>©2024 Ezequiel H. Espada • Argentina</p>
+        <p>Última modificación: <span id="last-modified"></span></p>
+    </footer>
+
+</body>
+</html>
