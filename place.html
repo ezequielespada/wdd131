@@ -25,7 +25,7 @@
             <picture>
                 <source media="(min-width: 1200px)" srcset="images/large-egypt-image.webp">
                 <source media="(min-width: 800px)" srcset="images/medium-egypt-image.webp">
-                <img src="images/small-egypt-image.webp" alt="Image of Egypt">
+                <img src="images/small-egypt-image.webp" alt="Landscape image of Egypt's desert and pyramids">
             </picture>
         </div>
 
@@ -47,8 +47,10 @@
             <h2>
                 <picture>
                     <source media="(max-width: 600px)" srcset="icons/weather-icon.svg">
+                    <source media="(min-width: 601px)" srcset="">
                     <img src="icons/weather-icon.svg.png" alt="Weather icon" onerror="this.outerHTML = '⛅';" loading="lazy">
-                </picture> Weather
+                </picture>
+                Weather
             </h2>
             <ul>
                 <li>Temperature: 30°C</li>
@@ -60,7 +62,7 @@
     </main>
 
     <footer>
-        <p>©2024 Ezequiel H. Espada • Argentina</p>
+        <p>©<span id="current-year"></span> Ezequiel H. Espada • Argentina</p>
         <p>Última modificación: <span id="last-modified"></span></p>
     </footer>
 
