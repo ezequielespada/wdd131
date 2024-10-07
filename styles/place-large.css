@@ -80,41 +80,8 @@ footer {
     padding: 10px 0;
 }
 
-@media (max-width: 800px) {
-    .data, .weather {
-        position: static;
-        width: 100%;
-        text-align: center;
-        border: none;
-        box-shadow: none;
-        margin: 0 auto 20px;
-    }
-
-    .image {
-        margin: 0;
-        height: auto;
-    }
-
-    .data h2, .weather h2 {
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        font-size: 1.2rem;
-        font-family: 'Playfair Display', serif;
-        border: none;
-        box-shadow: none;
-    }
-}
-
 .data ul, .weather ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-
-@media (max-width: 600px) {
-    .weather h2 img {
-        width: 32px;
-        height: 32px;
-    }
 }
