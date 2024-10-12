@@ -83,6 +83,14 @@ const temples = [
         area: 34369,
         imageUrl:
         "https://churchofjesuschristtemples.org/assets/img/temples/cordoba-argentina-temple/cordoba-argentina-temple-15736.jpg"
+    },
+    {
+      templeName: "Salta Argentina",
+      location: "Salta, Argentina",
+      dedicated: "2024, June, 16",
+      area: 27000,
+      imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/salta-argentina-temple/salta-argentina-temple-48253.jpg"
     }
   ];
   
