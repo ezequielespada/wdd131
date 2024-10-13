@@ -3,14 +3,30 @@ const hambutton = document.querySelector('#menu');
 const title = document.querySelector('h1');
 
 hambutton.addEventListener('click', () => {
-    mainnav.classList.toggle('show');
-    hambutton.classList.toggle('show');
-    
-    if (mainnav.classList.contains('show')) {
-        title.style.opacity = '0'; 
+  mainnav.classList.toggle('show');
+  hambutton.classList.toggle('show');
+  
+  const isShown = mainnav.classList.contains('show');
+  if (isShown) {
+    title.classList.add('hidden'); 
+  } else {
+    title.classList.remove('hidden'); 
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 600) {
+    mainnav.classList.remove('show');  
+    hambutton.classList.remove('show');  
+    title.classList.remove('hidden');  
+  } else {
+    const isShown = mainnav.classList.contains('show');
+    if (isShown) {
+      title.classList.add('hidden');  
     } else {
-        title.style.opacity = '1'; 
+      title.classList.remove('hidden');  
     }
+  }
 });
 
 const temples = [
@@ -33,68 +49,60 @@ const temples = [
         location: "Payson, Utah, United States",
         dedicated: "2015, June, 7",
         area: 96630,
-        imageUrl:
-        "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
     },
     {
         templeName: "Yigo Guam",
         location: "Yigo, Guam",
         dedicated: "2020, May, 2",
         area: 6861,
-        imageUrl:
-        "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
     },
     {
         templeName: "Washington D.C.",
         location: "Kensington, Maryland, United States",
         dedicated: "1974, November, 19",
         area: 156558,
-        imageUrl:
-        "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
     },
     {
         templeName: "Lima Perú",
         location: "Lima, Perú",
         dedicated: "1986, January, 10",
         area: 9600,
-        imageUrl:
-        "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
     },
     {
         templeName: "Mexico City Mexico",
         location: "Mexico City, Mexico",
         dedicated: "1983, December, 2",
         area: 116642,
-        imageUrl:
-        "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
     {
         templeName: "Buenos Aires Argentina",
         location: "Buenos Aires, Argentina",
         dedicated: "1986, January, 17",
         area: 30659,
-        imageUrl:
-        "https://churchofjesuschristtemples.org/assets/img/temples/buenos-aires-argentina-temple/buenos-aires-argentina-temple-4087.jpg"
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/buenos-aires-argentina-temple/buenos-aires-argentina-temple-4087.jpg"
     },
     {
         templeName: "Córdoba Argentina",
         location: "Córdoba, Argentina",
         dedicated: "2015, May, 17",
         area: 34369,
-        imageUrl:
-        "https://churchofjesuschristtemples.org/assets/img/temples/cordoba-argentina-temple/cordoba-argentina-temple-15736.jpg"
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/cordoba-argentina-temple/cordoba-argentina-temple-15736.jpg"
     },
     {
-      templeName: "Salta Argentina",
-      location: "Salta, Argentina",
-      dedicated: "2024, June, 16",
-      area: 27000,
-      imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/salta-argentina-temple/salta-argentina-temple-48253.jpg"
+        templeName: "Salta Argentina",
+        location: "Salta, Argentina",
+        dedicated: "2024, June, 16",
+        area: 27000,
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/salta-argentina-temple/salta-argentina-temple-48253.jpg"
     }
   ];
-  
-  function createTempleCard(temple) {
+
+function createTempleCard(temple) {
     const card = document.createElement('figure');
     
     const img = document.createElement('img');
@@ -109,14 +117,19 @@ const temples = [
     card.appendChild(caption);
     
     return card;
-  }
-  
-  function displayTemples(filter = "home") {
+}
+
+let currentFilter = "home";
+
+function displayTemples(filter = "home") {
+    if (filter === currentFilter && filter !== "home") return;
+    currentFilter = filter;
+
     const container = document.getElementById('temple-container');
-    container.innerHTML = ''; // Clear previous content
-  
+    container.innerHTML = ''; 
+
     let filteredTemples = temples;
-  
+
     switch (filter) {
       case 'old':
         filteredTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900);
@@ -130,31 +143,31 @@ const temples = [
       case 'small':
         filteredTemples = temples.filter(temple => temple.area < 10000);
         break;
+      default:
+
+      filteredTemples = temples;
     }
-  
+
     filteredTemples.forEach(temple => {
       container.appendChild(createTempleCard(temple));
     });
-  }
-  
-  document.querySelectorAll('.nav-text').forEach(item => {
+}
+
+document.querySelectorAll('.nav-text').forEach(item => {
     item.addEventListener('click', event => {
       const filter = event.target.getAttribute('data-filter');
       displayTemples(filter);
     });
-  });
-  
-  // Display all temples on page load
-  displayTemples();
-  
-  // Footer logic for current year and last modified date
-  const yearElement = document.getElementById('currentyear');
-  if (yearElement) {
+});
+
+displayTemples('home');
+
+const yearElement = document.getElementById('currentyear');
+if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
-  }
-  
-  const lastModifiedElement = document.getElementById('lastModified');
-  if (lastModifiedElement) {
+}
+
+const lastModifiedElement = document.getElementById('lastModified');
+if (lastModifiedElement) {
     lastModifiedElement.textContent = 'Last Modified: ' + document.lastModified;
-  }
-  
+}

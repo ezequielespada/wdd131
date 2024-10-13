@@ -1,8 +1,8 @@
 :root {
     --color1: black; 
-    --color2: #006465; /* dark teal */
-    --color3: #0f928c; /* teal */
-    --color4: #00c9d2; /* light teal */
+    --color2: #006465;
+    --color3: #0f928c;
+    --color4: #00c9d2;
     --color5: white;
 }
 
@@ -30,6 +30,11 @@ h1 {
     color: var(--color5);
     padding: 0.5rem;
     white-space: nowrap;
+    transition: opacity 0.5s ease;
+}
+
+h1.hidden {
+    display: none;
 }
 
 /**************** Nav Bar - Mobile View ***************/
@@ -40,7 +45,7 @@ h1 {
     background-color: var(--color2);
     color: var(--color5);
     cursor: pointer;
-    transition: background-color 0.5s, color 0.5s;
+    transition: 0.5s ease;
     text-decoration: none;
 }
 
@@ -70,6 +75,7 @@ nav {
     list-style: none;
     max-width: 760px;
     width: 100%;
+    text-align: center;
 }
 
 .navigation li {
