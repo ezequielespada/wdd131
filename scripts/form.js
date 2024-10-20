@@ -1,4 +1,3 @@
-// Dynamic product population
 const products = [
     { id: "fc-1888", name: "Flux Capacitor", averagerating: 4.5 },
     { id: "fc-2050", name: "Power Laces", averagerating: 4.7 },
@@ -7,20 +6,37 @@ const products = [
     { id: "jj-1969", name: "Warp Equalizer", averagerating: 5.0 }
 ];
 
-const productSelect = document.getElementById('product');
+function populateProducts() {
+    const productSelect = document.getElementById('product');
+    products.forEach(product => {
+        const option = document.createElement('option');
+        option.value = product.id;
+        option.textContent = product.name;
+        productSelect.appendChild(option);
+    });
+}
 
-products.forEach(product => {
-    const option = document.createElement('option');
-    option.value = product.id;
-    option.textContent = product.name;
-    productSelect.appendChild(option);
+populateProducts();
+
+document.querySelectorAll('.rating input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+        const selectedValue = document.querySelector('input[name="rating"]:checked');
+        if (selectedValue) {
+            console.log(`Calificación seleccionada: ${selectedValue.value}`);
+        }
+    });
 });
 
-// LocalStorage to track the number of reviews
 if (localStorage.getItem('reviewCount') === null) {
     localStorage.setItem('reviewCount', 0);
 }
 
-// Update last modified date
-const lastModified = document.getElementById('last-modified');
-lastModified.textContent = document.lastModified;
+const yearElement = document.getElementById('currentyear');
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+const lastModifiedElement = document.getElementById('lastModified');
+if (lastModifiedElement) {
+    lastModifiedElement.textContent = 'Last Modified: ' + document.lastModified;
+}

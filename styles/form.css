@@ -1,31 +1,41 @@
+:root {
+    --color-blue: #0055A4;  /* Azul de la bandera francesa */
+    --color-white: #FFFFFF; /* Blanco de la bandera francesa */
+    --color-red: #EF4135;   /* Rojo de la bandera francesa */
+    --color-gray: #B39DDB;  /* Color neutral para bordes */
+    --color-dark-gray: #333; /* Texto por defecto */
+    --color-gold: #FFD700;   /* Color dorado para las estrellas */
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     background-color: #F5F5F5;
-    color: #333;
+    color: var(--color-dark-gray);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .review-form {
-    background-color: #D1C4E9;
+    background-color: var(--color-white);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    width: 90%;
+    width: 100%;
     max-width: 400px;
 }
 
 h1 {
-    color: #4A148C;
+    font-family: 'Playfair Display', serif;
+    color: var(--color-white);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -34,13 +44,14 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 select, input[type="date"], textarea, input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #B39DDB;
+    border: 1px solid var(--color-gray);
     border-radius: 5px;
 }
 
@@ -50,22 +61,33 @@ textarea {
 
 .rating {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     margin-bottom: 15px;
 }
 
 .rating label {
     font-size: 24px;
-    color: #FFD700;
+    color: #ddd; 
     cursor: pointer;
+    transition: color 0.2s ease-in-out;
 }
 
 .rating input {
     display: none;
 }
 
+.rating input:checked ~ label {
+    color: var(--color-gold); 
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: var(--color-gold); 
+}
+
 input[type="submit"] {
-    background-color: #4A148C;
+    background-color: var(--color-red);
     color: white;
     padding: 10px;
     border: none;
@@ -76,21 +98,21 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #6A1B9A;
+    background-color: #EF7B7B; 
 }
 
-/**************** Footer ***************/
-footer {
-    background-color: var(--color2);
-    color: var(--color5);
+header, footer {
+    background-color: var(--color-blue);
+    color: white;
     padding: 1rem;
+    margin: 1rem;
     text-align: center;
-    border-top: 2px solid var(--color3);
-    box-shadow: 0 -2px 5px var(--color1);
-}
+    border-top: 2px solid var(--color-gray);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 
-footer p {
-    margin: 10px;
 }
 
 .checkbox-group {
@@ -104,7 +126,7 @@ footer p {
 
 @media (min-width: 600px) {
     .review-form {
-        width: 60%;
+        width: auto;
         max-width: 500px;
     }
 }
