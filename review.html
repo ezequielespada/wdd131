@@ -28,7 +28,7 @@
     <script>
         // Cargar y mostrar el conteo de reseñas
         const reviewCountElement = document.getElementById('reviewCount');
-        reviewCountElement.textContent = localStorage.getItem('reviewCount');
+        reviewCountElement.textContent = localStorage.getItem('reviewCount') || 0; // Asegúrate de manejar el caso donde no haya reseñas
 
         // Mostrar las reseñas almacenadas
         const reviewListElement = document.getElementById('reviewList');

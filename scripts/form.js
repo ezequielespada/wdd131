@@ -49,11 +49,19 @@ document.querySelector('form').addEventListener('submit', (event) => {
     event.preventDefault(); // Evita el envío normal del formulario
 
     const product = document.getElementById('product').value;
-    const rating = document.querySelector('input[name="rating"]:checked').value;
+    const selectedRating = document.querySelector('input[name="rating"]:checked');
     const date = document.getElementById('date').value;
     const features = Array.from(document.querySelectorAll('input[name="features"]:checked')).map(checkbox => checkbox.value);
     const reviewText = document.getElementById('review').value;
     const name = document.getElementById('name').value;
+
+    // Validación
+    if (!product || !selectedRating) {
+        alert('Por favor selecciona un producto y una calificación antes de enviar.');
+        return; // Salir si no hay selección
+    }
+
+    const rating = selectedRating.value;
 
     // Crea un objeto de reseña
     const review = {
@@ -71,7 +79,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
     localStorage.setItem('reviews', JSON.stringify(reviews));
 
     // Incrementa el conteo de reseñas
-    let reviewCount = localStorage.getItem('reviewCount');
+    let reviewCount = parseInt(localStorage.getItem('reviewCount'), 10); // Asegúrate de convertir a número
     reviewCount++;
     localStorage.setItem('reviewCount', reviewCount);
 
