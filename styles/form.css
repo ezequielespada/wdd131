@@ -1,10 +1,11 @@
 :root {
-    --color-blue: #0055A4;  /* Azul de la bandera francesa */
+    --color-blue: #002d5a;  /* Azul de la bandera francesa */
     --color-white: #FFFFFF; /* Blanco de la bandera francesa */
-    --color-red: #EF4135;   /* Rojo de la bandera francesa */
+    --color-red: #cf0000;   /* Rojo de la bandera francesa */
     --color-gray: #B39DDB;  /* Color neutral para bordes */
-    --color-dark-gray: #333; /* Texto por defecto */
+    --color-black: black; /* Texto por defecto */
     --color-gold: #FFD700;   /* Color dorado para las estrellas */
+    --color-bg: #EAEAEA; /* Gris tenue para el BG */
 }
 
 * {
@@ -15,8 +16,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #F5F5F5;
-    color: var(--color-dark-gray);
+    background-color: var(--color-bg);
+    color: var(--color-black);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -27,8 +28,8 @@ body {
 .review-form {
     background-color: var(--color-white);
     padding: 20px;
+    border: 1px solid var(--color-blue);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
 }
@@ -51,7 +52,7 @@ select, input[type="date"], textarea, input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid var(--color-gray);
+    border: 1px solid var(--color-blue);
     border-radius: 5px;
 }
 
@@ -68,9 +69,9 @@ textarea {
 
 .rating label {
     font-size: 24px;
-    color: #ddd; 
+    color: var(--color-black); 
     cursor: pointer;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.5s ease-in-out;
 }
 
 .rating input {
@@ -78,12 +79,12 @@ textarea {
 }
 
 .rating input:checked ~ label {
-    color: var(--color-gold); 
+    color: var(--color-red); 
 }
 
 .rating label:hover,
 .rating label:hover ~ label {
-    color: var(--color-gold); 
+    color: var(--color-red); 
 }
 
 input[type="submit"] {
@@ -99,6 +100,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #EF7B7B; 
+    font-weight: bolder;
 }
 
 header, footer {
@@ -107,22 +109,34 @@ header, footer {
     padding: 1rem;
     margin: 1rem;
     text-align: center;
-    border-top: 2px solid var(--color-gray);
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-
+    border: 1px solid var(--color-black);
 }
 
-.checkbox-group {
+.review-form, header, footer {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.checkbox-group div {
+    gap: 10px; 
+}
+
+.checkbox-group input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+.checkbox-item {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
 }
 
-.checkbox-group label {
-    margin-bottom: 5px;
+.checkbox-item label {
+    order: -1; 
 }
+
 
 @media (min-width: 600px) {
     .review-form {
