@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 - Review Confirmation Page by Ezequiel H. Espada.">
+    <link rel="stylesheet" href="styles/form.css">
+    <title>Review Confirmation</title>
+</head>
+<body>
+    <header>
+        <h1>Thank You for Your Review!</h1>
+    </header>
+
+    <section class="review-confirmation">
+        <p>Your review has been submitted successfully.</p>
+        <p>Review Count: <span id="reviewCount"></span></p>
+
+        <h2>Previous Reviews</h2>
+        <div id="reviewList"></div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> - Ezequiel H. Espada - Argentina</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        // Cargar y mostrar el conteo de reseñas
+        const reviewCountElement = document.getElementById('reviewCount');
+        reviewCountElement.textContent = localStorage.getItem('reviewCount');
+
+        // Mostrar las reseñas almacenadas
+        const reviewListElement = document.getElementById('reviewList');
+        const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+        reviews.forEach((review) => {
+            const reviewDiv = document.createElement('div');
+            reviewDiv.classList.add('review');
+            reviewDiv.innerHTML = `<strong>${review.product}</strong> <br>
+                                  Rating: ${review.rating} stars <br>
+                                  Installation Date: ${review.date} <br>
+                                  Features: ${review.features.join(', ')} <br>
+                                  Review: ${review.text} <br>
+                                  Reviewer: ${review.name || 'Anonymous'} <hr>`;
+            reviewListElement.appendChild(reviewDiv);
+        });
+
+        // Mostrar el año actual
+        const yearElement = document.getElementById('currentyear');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+
+        // Mostrar la fecha de última modificación
+        const lastModifiedElement = document.getElementById('lastModified');
+        if (lastModifiedElement) {
+            lastModifiedElement.textContent = 'Last Modified: ' + document.lastModified;
+        }
+    </script>
+</body>
+</html>
