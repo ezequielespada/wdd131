@@ -27,26 +27,22 @@ document.querySelectorAll('.rating input[type="radio"]').forEach(radio => {
     });
 });
 
-// Inicializa el contador de reseñas en localStorage
 if (localStorage.getItem('reviewCount') === null) {
     localStorage.setItem('reviewCount', 0);
 }
 
-// Actualiza el año actual
 const yearElement = document.getElementById('currentyear');
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
 
-// Muestra la fecha de última modificación
 const lastModifiedElement = document.getElementById('lastModified');
 if (lastModifiedElement) {
     lastModifiedElement.textContent = 'Last Modified: ' + document.lastModified;
 }
 
-// Al enviar el formulario
 document.querySelector('form').addEventListener('submit', (event) => {
-    event.preventDefault(); // Evita el envío normal del formulario
+    event.preventDefault(); 
 
     const product = document.getElementById('product').value;
     const selectedRating = document.querySelector('input[name="rating"]:checked');
@@ -55,15 +51,13 @@ document.querySelector('form').addEventListener('submit', (event) => {
     const reviewText = document.getElementById('review').value;
     const name = document.getElementById('name').value;
 
-    // Validación
     if (!product || !selectedRating) {
         alert('Por favor selecciona un producto y una calificación antes de enviar.');
-        return; // Salir si no hay selección
+        return;
     }
 
     const rating = selectedRating.value;
 
-    // Crea un objeto de reseña
     const review = {
         product,
         rating,
@@ -73,16 +67,13 @@ document.querySelector('form').addEventListener('submit', (event) => {
         name
     };
 
-    // Guarda la reseña en localStorage
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
     reviews.push(review);
     localStorage.setItem('reviews', JSON.stringify(reviews));
 
-    // Incrementa el conteo de reseñas
-    let reviewCount = parseInt(localStorage.getItem('reviewCount'), 10); // Asegúrate de convertir a número
+    let reviewCount = parseInt(localStorage.getItem('reviewCount'), 10);
     reviewCount++;
     localStorage.setItem('reviewCount', reviewCount);
 
-    // Redirige a la página de confirmación
     window.location.href = 'review.html';
 });

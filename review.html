@@ -26,11 +26,9 @@
     </footer>
 
     <script>
-        // Cargar y mostrar el conteo de reseñas
         const reviewCountElement = document.getElementById('reviewCount');
-        reviewCountElement.textContent = localStorage.getItem('reviewCount') || 0; // Asegúrate de manejar el caso donde no haya reseñas
+        reviewCountElement.textContent = localStorage.getItem('reviewCount') || 0;
 
-        // Mostrar las reseñas almacenadas
         const reviewListElement = document.getElementById('reviewList');
         const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
@@ -46,13 +44,11 @@
             reviewListElement.appendChild(reviewDiv);
         });
 
-        // Mostrar el año actual
         const yearElement = document.getElementById('currentyear');
         if (yearElement) {
             yearElement.textContent = new Date().getFullYear();
         }
 
-        // Mostrar la fecha de última modificación
         const lastModifiedElement = document.getElementById('lastModified');
         if (lastModifiedElement) {
             lastModifiedElement.textContent = 'Last Modified: ' + document.lastModified;
