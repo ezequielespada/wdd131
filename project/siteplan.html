@@ -44,6 +44,13 @@
             margin: 10px auto;
             display: block;
         }
+
+        img {
+            border: 2px solid #002395; 
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px; 
+            margin-top: 10px; 
+        }
         footer {
             margin: 0;
             background-color: #002395;
@@ -108,15 +115,19 @@
     <section>
         <h2>6. Wireframe</h2>
         <p>El diseño preliminar del sitio para dispositivos móviles y escritorio es el siguiente:</p>
-        <ul>
-            <li><strong>Vista móvil</strong>: Imagen de héroe con productos destacados, categorías en formato columna, carrusel de productos, y footer con enlaces a FAQ y contacto.</li>
-            <img src="images/ladousse-movil-version.svg" alt="Wireframe versión movil de Ladousse"  width="100%" height="auto">
-            
-            <li><strong>Vista de escritorio</strong>: Navegación horizontal con menú desplegable, imagen de héroe a pantalla completa, productos destacados en cuadrícula.</li>
-            <img src="images/ladousse-large.svg" alt="Wireframe versión escritorio de Ladousse" width="100%" height="auto">
-
-        </ul>
-    </section>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <div style="flex: 1; margin-right: 10px;">
+                <h3>Vista Móvil</h3>
+                <p>Imagen de héroe con productos destacados, categorías en formato columna, carrusel de productos, y footer con enlaces a FAQ y contacto.</p>
+                <img src="images/ladousse-movil-version.svg" alt="Wireframe versión movil de Ladousse" width="100%" height="auto">
+            </div>
+            <div style="flex: 1; margin-left: 10px;">
+                <h3>Vista de Escritorio</h3>
+                <p>Navegación horizontal con menú desplegable, imagen de héroe a pantalla completa, productos destacados en cuadrícula.</p>
+                <img src="images/ladousse-large.svg" alt="Wireframe versión escritorio de Ladousse" width="100%" height="auto">
+            </div>
+        </div>
+    </section>    
 
     <footer>
         <p>Plan del sitio - Ladousse | Desarrollo Web 2024</p>
