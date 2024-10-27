@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talles - Ladousse</title>
+    <link rel="stylesheet" href="styles/ladousse.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="ladousse.html"><img src="images/ladousse-logo.jpeg" alt="Ladousse Logo" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="ladousse.html#productos">Productos</a></li>
+                <li><a href="ladousse.html#categorias">Categorías</a></li>
+                <li><a href="ladousse.html#faq">FAQ</a></li>
+                <li><a href="ladousse.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="seleccion-talles">
+            <h2>Selecciona tu Talle</h2>
+            <form id="talle-form">
+                <label for="genero">Género:</label>
+                <select id="genero" required>
+                    <option value="">Seleccionar</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select>
+
+                <label for="tipo-cuerpo">Tipo de Cuerpo:</label>
+                <select id="tipo-cuerpo" required>
+                    <option value="">Seleccionar</option>
+                    <option value="A">Distribución en A (caderas más anchas)</option>
+                    <option value="Rectangular">Distribución Equilibrada (caderas, cintura y pecho similares)</option>
+                    <option value="V">Distribución en V (pecho más ancho)</option>
+                </select>
+
+                <button type="submit">Ver Modelos</button>
+            </form>
+
+            <div id="resultados"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ladousse | Être Unique</p>
+    </footer>
+
+    <script src="scripts/talles.js"></script>
+</body>
+</html>
