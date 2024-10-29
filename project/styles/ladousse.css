@@ -105,7 +105,7 @@ header .hero {
 }
 
 /* Secciones de contenido */
-#productos, #categorias, #faq, #contacto {
+#productos, #categorias, #faq, #contacto, #resultados {
     margin: 40px auto;
     max-width: 1000px;
     padding: 20px;
@@ -251,26 +251,43 @@ button:hover {
     background-color: var(--color-rojo-hover);
 }
 
-#seleccion-talles {
+/* Sección del formulario de selección de talles */
+#talles {
     max-width: 500px;
     margin: 20px auto;
     padding: 20px;
     background-color: var(--color-blanco);
     border: 1px solid var(--color-azul);
     border-radius: 8px;
-}
-
-#talle-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px; 
 }
 
-#resultados {
-    margin-top: 20px;
+/* Estilos de los inputs de número */
+input[type="number"] {
     padding: 10px;
-    background-color: var(--color-gris-claro);
+    border: 1px solid var(--color-gris-claro);
     border-radius: 4px;
+    font-size: 1em;
+    color: var(--color-negro);
+}
+
+/* Estilo del botón de calcular */
+button.calcular {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* Cambios de color al pasar el mouse sobre el botón */
+button.calcular:hover {
+    background-color: var(--color-rojo-hover);
 }
 
 /* Footer */
@@ -286,8 +303,8 @@ footer p {
     font-size: 0.9em;
 }
 
-/* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
+/* Media Queries para dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 767px) {
     .nav-links {
         flex-direction: column;
         gap: 10px;
@@ -304,5 +321,29 @@ footer p {
     .product-card, .category-item, #contacto, #faq {
         width: 100%;
         max-width: 300px;
+    }
+
+    #resultados {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #resultados div {
+        max-width: 100%;
+    }
+}
+
+/* Media Queries para pantallas medianas a grandes */
+@media (min-width: 768px) {
+    #resultados {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Cambia esto para crear 3 columnas */
+        gap: 20px;
+    }
+
+    #resultados div {
+        /* Elimina max-width para que use el tamaño de la grilla */
+        max-width: none;
     }
 }

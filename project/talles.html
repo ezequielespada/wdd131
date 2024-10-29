@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talles - Ladousse</title>
+    <title>Recomendación de Talles - Ladousse</title>
     <link rel="stylesheet" href="styles/ladousse.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="ladousse.html"><img src="images/ladousse-logo.jpeg" alt="Ladousse Logo" class="logo"></a>
+            <img src="images/ladousse-logo.jpeg" alt="Ladousse Logo" class="logo">
             <ul class="nav-links">
                 <li><a href="ladousse.html#productos">Productos</a></li>
                 <li><a href="ladousse.html#categorias">Categorías</a></li>
+                <li><a href="talles.html">Talles</a></li>
                 <li><a href="ladousse.html#faq">FAQ</a></li>
                 <li><a href="ladousse.html#contacto">Contacto</a></li>
             </ul>
@@ -20,28 +21,27 @@
     </header>
 
     <main>
-        <section id="seleccion-talles">
-            <h2>Selecciona tu Talle</h2>
-            <form id="talle-form">
-                <label for="genero">Género:</label>
-                <select id="genero" required>
-                    <option value="">Seleccionar</option>
-                    <option value="hombre">Hombre</option>
-                    <option value="mujer">Mujer</option>
-                </select>
+        <section id="contacto">
+            <h1>Recomendación de Talles</h1>
+            <form id="talles-form">
+                <label for="caderas">Ancho de Caderas (cm):</label>
+                <input type="number" id="caderas" name="caderas" required>
 
-                <label for="tipo-cuerpo">Tipo de Cuerpo:</label>
-                <select id="tipo-cuerpo" required>
-                    <option value="">Seleccionar</option>
-                    <option value="A">Distribución en A (caderas más anchas)</option>
-                    <option value="Rectangular">Distribución Equilibrada (caderas, cintura y pecho similares)</option>
-                    <option value="V">Distribución en V (pecho más ancho)</option>
-                </select>
+                <label for="cintura">Ancho de Cintura (cm):</label>
+                <input type="number" id="cintura" name="cintura" required>
 
-                <button type="submit">Ver Modelos</button>
+                <label for="pecho">Ancho de Pecho (cm):</label>
+                <input type="number" id="pecho" name="pecho" required>
+
+                <button type="button" onclick="calcularTalle()">Calcular</button>
             </form>
+        </section>
 
-            <div id="resultados"></div>
+        <section id="resultados" style="display: none;">
+            <h2>Recomendaciones de Talles</h2>
+            <div class="product-grid" id="recomendaciones">
+                <!-- Las recomendaciones se generarán aquí mediante JavaScript -->
+            </div>
         </section>
     </main>
 
