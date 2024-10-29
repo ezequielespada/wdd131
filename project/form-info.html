@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladousse - Solicitar Más Información</title>
+    <link rel="stylesheet" href="styles/ladousse.css">
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/ladousse-logo.jpeg" alt="Ladousse Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="ladousse.html">Inicio</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="talles.html">Talles</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contacto">
+            <h2>Solicitar Más Información sobre Nuestros Productos</h2>
+            <form action="info-request.html" method="get">
+                <label for="gender">Seleccione Género</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Seleccione un Género...</option>
+                    <option value="man">Hombre</option>
+                    <option value="woman">Mujer</option>
+                </select>
+
+                <label for="name">Ingrese su Nombre</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Ingrese su Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="waist">Medidas de Cintura (cm)</label>
+                <input type="number" id="waist" name="waist" required>
+
+                <label for="hip">Medidas de Cadera (cm)</label>
+                <input type="number" id="hip" name="hip" required>
+
+                <label for="chest">Medidas de Pecho (cm)</label>
+                <input type="number" id="chest" name="chest" required>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="authorization" name="authorization" value="authorized" required>
+                    <label for="authorization">Autorizo a Ladousse a recibir información relevante acerca de sus productos.</label>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ladousse | Être Unique</p>
+    </footer>
+
+    <script src="scripts/ladousse.js"></script>
+</body>
+</html>

@@ -14,9 +14,10 @@
             <ul class="nav-links">
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#categorias">Categorías</a></li>
-                <li><a href="talles.html">Talles</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="talles.html">Talles</a></li>
+                <li><a href="#contacto">Newsletter</a></li>
+                <li><a href="form-info.html">Contacto</a></li>
             </ul>
         </nav>
     
@@ -88,7 +89,7 @@
     </section>
 
     <section id="contacto">
-        <h2>Contacto</h2>
+        <h2>Newsletter</h2>
         <form>
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -96,8 +97,10 @@
             <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" name="email" required>
             
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <div class="checkbox-group">
+                <input type="checkbox" id="authorization" name="authorization" value="authorized" required>
+                <label for="authorization">Autorizo a Ladousse a recibir información relevante acerca de sus productos.</label>
+            </div>
             
             <button type="submit">Enviar</button>
         </form>
