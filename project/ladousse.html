@@ -23,10 +23,17 @@
     
         <!-- Hero section dentro del header -->
         <div class="hero">
-            <img src="images/ladousse-hero.webp" alt="Imagen principal de ropa médica Ladousse">
+            <picture>
+                <source srcset="images/hero-image-small.webp" type="image/webp" media="(max-width: 600px)">
+                <source srcset="images/hero-image-medium.webp" type="image/webp" media="(max-width: 1200px)">
+                <source srcset="images/hero-image-large.webp" type="image/webp">
+                <source srcset="images/hero-image-small.jpg" media="(max-width: 600px)">
+                <source srcset="images/hero-image-medium.jpg" media="(max-width: 1200px)">
+                <img src="images/hero-image-large.jpg" alt="Imagen principal de ropa médica Ladousse" loading="lazy">
+            </picture>
             <div class="hero-text">
                 <h1>Ropa Médica Profesional</h1>
-                <p>Diseños únicos para el personal de salud. ¡Compra con estilo y confort!</p>
+                <p>Diseños únicos para el personal de salud. <br> ¡Compra con estilo y confort!</p>
                 <a href="#productos" class="cta-button">Explorar Productos</a>
             </div>
         </div>
@@ -37,19 +44,19 @@
         <h2>Productos Destacados</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="images/model-06.jpg" alt="Casaca Médica">
+                <img src="images/model-06.jpg" alt="Casaca Médica" loading="lazy">
                 <h3>Casaca Médica Isabelle</h3>
                 <p>Tallas: XS al 4XL</p>
                 <p>$30.00 USD</p>
             </div>
             <div class="product-card">
-                <img src="images/model-06.jpg" alt="Chaqueta Médica">
+                <img src="images/model-06.jpg" alt="Chaqueta Médica" loading="lazy">
                 <h3>Chaqueta Médica Paris</h3>
                 <p>Tallas: S al 3XL</p>
                 <p>$40.00 USD</p>
             </div>
             <div class="product-card">
-                <img src="images/model-06.jpg" alt="Chaqueta Médica">
+                <img src="images/model-06.jpg" alt="Chaqueta Médica" loading="lazy">
                 <h3>Chaqueta Médica Paris</h3>
                 <p>Tallas: S al 3XL</p>
                 <p>$40.00 USD</p>
@@ -63,15 +70,15 @@
         <div class="category-list">
             <div class="category-item">
                 <h3>Scrubs</h3>
-                <img src="images/medical-work-wear.webp" alt="Scrubs Médicos">
+                <img src="images/medical-work-wear.webp" alt="Scrubs Médicos" loading="lazy">
             </div>
             <div class="category-item">
                 <h3>Chaquetas</h3>
-                <img src="images/medical-work-wear.webp" alt="Chaquetas Médicas">
+                <img src="images/medical-work-wear.webp" alt="Chaquetas Médicas" loading="lazy">
             </div>
             <div class="category-item">
                 <h3>Accesorios</h3>
-                <img src="images/medical-work-wear.webp" alt="Accesorios Médicos">
+                <img src="images/medical-work-wear.webp" alt="Accesorios Médicos" loading="lazy">
             </div>
         </div>
     </section>
