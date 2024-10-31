@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladousse - Ropa Médica</title>
+    <link rel="stylesheet" href="styles/ladousse.css">
+    <link rel="icon" href="images/favicon.png">
+    <style>
+        .construction-banner {
+            background-color: #FFD700; /* Color amarillo */
+            color: #333; /* Color del texto */
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0; /* Espacio alrededor del banner */
+        }
+    </style>
+    <script src="scripts/ladousse.js" defer></script> 
+</head>
+<body>    
+    <header>
+        <nav>
+            <img src="images/ladousse-logo.jpeg" alt="Ladousse Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="talles.html">Talles</a></li>
+                <li><a href="#contacto">Newsletter</a></li>
+                <li><a href="form-info.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero section dentro del header -->
+        <div class="hero">
+            <picture>
+                <source srcset="images/hero-image-small.webp" type="image/webp" media="(max-width: 600px)">
+                <source srcset="images/hero-image-medium.webp" type="image/webp" media="(max-width: 1200px)">
+                <source srcset="images/hero-image-large.webp" type="image/webp">
+                <source srcset="images/hero-image-small.jpg" media="(max-width: 600px)">
+                <source srcset="images/hero-image-medium.jpg" media="(max-width: 1200px)">
+                <img src="images/hero-image-large.jpg" alt="Imagen principal de ropa médica Ladousse" loading="lazy">
+            </picture>
+            <div class="hero-text">
+                <h1>Ropa Médica Profesional</h1>
+                <p>Diseños únicos para el personal de salud. <br> ¡Compra con estilo y confort!</p>
+                <a href="#productos" class="cta-button">Explorar Productos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner de "Sitio en Construcción" -->
+    <div class="construction-banner">
+        Este sitio está en construcción. ¡Vuelve pronto para ver más productos!
+    </div>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> - Ladousse. Todos los derechos reservados.</p>
+        <p id="lastModified"></p>
+        <p>Imágenes generadas por IA a través de Leonaro.ai</p>
+    </footer>
+    
+</body>
+</html>

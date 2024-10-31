@@ -177,6 +177,20 @@ p {
     color: var(--color-gris);
 }
 
+.btn {
+    display: inline-block;
+    background-color: var(--color-rojo); /* Color rojo */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px; /* Espacio arriba del botón */
+}
+
+.btn:hover {
+    background-color: var(--color-rojo-hover); /* Color más oscuro al pasar el mouse */
+}
+
 /* Estilos para la sección FAQ */
 #faq {
     margin: 40px auto;
