@@ -1,3 +1,31 @@
+// Función para cargar medidas y funcion para cargar recomendaciones desde localStorage
+function cargarMedidasGuardadas() {
+    const caderasGuardadas = localStorage.getItem("caderas");
+    const cinturaGuardada = localStorage.getItem("cintura");
+    const pechoGuardado = localStorage.getItem("pecho");
+
+    if (caderasGuardadas && cinturaGuardada && pechoGuardado) {
+        document.getElementById("caderas").value = caderasGuardadas;
+        document.getElementById("cintura").value = cinturaGuardada;
+        document.getElementById("pecho").value = pechoGuardado;
+    }
+}
+
+function cargarRecomendacionesGuardadas() {
+    const tipoCuerpoGuardado = localStorage.getItem("tipoCuerpo");
+    if (tipoCuerpoGuardado) {
+        const recomendacionesDiv = document.getElementById("recomendaciones");
+        recomendacionesDiv.innerHTML = "";
+        const seleccionados = obtenerRecomendaciones(tipoCuerpoGuardado);
+        mostrarRecomendaciones(seleccionados, recomendacionesDiv);
+        document.getElementById("resultados").style.display = "block";
+    }
+}
+
+// Llamar ambas funciones al inicio
+cargarMedidasGuardadas();
+cargarRecomendacionesGuardadas();
+
 function calcularTalle() {
     // Obtener valores de entrada y convertirlos a enteros
     const caderas = parseInt(document.getElementById("caderas").value);
@@ -10,6 +38,11 @@ function calcularTalle() {
         return;
     }
 
+    // Guardar las medidas en localStorage
+    localStorage.setItem("caderas", caderas);
+    localStorage.setItem("cintura", cintura);
+    localStorage.setItem("pecho", pecho);
+
     // Limpiar resultados previos
     const recomendacionesDiv = document.getElementById("recomendaciones");
     recomendacionesDiv.innerHTML = "";
@@ -17,6 +50,9 @@ function calcularTalle() {
 
     // Determinar tipo de cuerpo según las medidas
     let tipoCuerpo = determinarTipoCuerpo(caderas, cintura, pecho);
+
+    // Guardar tipo de cuerpo en localStorage
+    localStorage.setItem("tipoCuerpo", tipoCuerpo);
 
     // Obtener recomendaciones según tipo de cuerpo
     const seleccionados = obtenerRecomendaciones(tipoCuerpo);
@@ -97,4 +133,15 @@ function mostrarRecomendaciones(modelos, contenedor) {
         modeloDiv.appendChild(descripcion);
         contenedor.appendChild(modeloDiv);
     });
+}
+
+//Footer
+const yearElement = document.getElementById('currentyear');
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+const lastModifiedElement = document.getElementById('lastModified');
+if (lastModifiedElement) {
+    lastModifiedElement.textContent = 'Last Modified: ' + document.lastModified;
 }
